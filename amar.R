@@ -1,6 +1,10 @@
 library("Rlab")
+library("DescTools")
+library("EnvStats")
 height = rnorm(200, mean = 170, sd = 9.4)
 sex = rbern(200, prob = 0.7)
 error = runif(200, min = 85, max = 100)
 weight = lapply(height, '-', error)
-print(weight)
+
+k = 1 + log(200,2)
+print(k)
