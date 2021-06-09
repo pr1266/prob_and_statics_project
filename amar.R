@@ -10,3 +10,6 @@ weight = sapply(height, '-', error)
 
 k = floor(1 + log(200, 2))
 weight_freq = freq(weight, breaks = k)
+print(weight_freq)
+sex_labels = c(0, 1)
+pie(sex, labels = sex_labels, main = "pie chart")
