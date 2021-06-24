@@ -3,12 +3,13 @@ library("DescTools")
 library("EnvStats")
 library("summarytools")
 
+# simulation :
 height = rnorm(200, mean = 170, sd = 9.4)
 sex = rbern(200, prob = 0.7)
 error = runif(200, min = 85, max = 100)
 weight = sapply(height, '-', error)
 
-
+# amar tosifi :
 k = floor(1 + log(200, 2))
 weight_freq = freq(weight, breaks = k)
 print(weight_freq)
@@ -43,3 +44,7 @@ min_weight = min(weight)
 median_weight = median(weight)
 var_weight = var(weight)
 mean_weight = mean(weight)
+
+# azmoon haye amari :
+test_1 = t.test(height, mu = 170, conf_level = 0.1)
+print(test_1)
