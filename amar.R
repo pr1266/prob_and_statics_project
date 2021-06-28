@@ -46,7 +46,7 @@ var_weight = var(weight)
 mean_weight = mean(weight)
 
 # azmoon haye amari :
-test_1 = t.test(height, mu = 170, conf_level = 0.1)
+test_1 = t.test(height, alternative = "less", mu = 170, conf_level = 0.1)
 print(test_1)
 
 test_2 = varTest(height, sigma.squared = 90, conf.level = 0.05)
