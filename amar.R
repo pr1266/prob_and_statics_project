@@ -11,7 +11,8 @@ weight = height - error
 
 # amar tosifi :
 k = floor(1 + log(200, 2))
-weight_freq = freq(weight, breaks = k)
+print(k)
+weight_freq = freq(weight, breaks = 8)
 print(weight_freq)
 
 male = sum(sex == 1)
@@ -62,10 +63,10 @@ print(test_1)
 
 # hala nahie bohrani ro hesab mikonim :
 
-c = pnorm(0.9)
-print(c) 
+c1 = pnorm(0.9)
+print(c1) 
 
-print(-0.47 > -c)
+print(-0.47 > -c1)
 # natije false pass farz H rad mishe
 
 
@@ -78,9 +79,28 @@ print(-0.47 > -c)
 test_2 = varTest(weight, sigma.squared = 90, alternative = "greater", conf.level = 0.95)
 print(test_2)
 
+# meghdar e amare az test_2 be dast miad va bayad
+# meghdar e c (nahie bohrani) ro hesab konim
+
+c2 = qchisq(0.95, 199)
+print(c2)
+
+print(258 > c2)
 
 
 
 
-test_2 = varTest(height, sigma.squared = 90, conf.level = 0.95)
-print(test_2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
