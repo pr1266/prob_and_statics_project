@@ -87,8 +87,19 @@ print(c2)
 
 print(258 > c2)
 
+# azmoon e 3vom
+# azmoon variance baraye ghad e mardan va zanan
+
+ghad_mardan = c()
 
 
+
+
+ghad_mardan = c(sex == 1)
+print(ghad_mardan)
+x = c(1, 2, 3)
+x = c(x, 4)
+print(x)
 
 
 
