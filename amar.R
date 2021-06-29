@@ -91,15 +91,45 @@ print(258 > c2)
 # azmoon variance baraye ghad e mardan va zanan
 
 ghad_mardan = c()
+ghad_zanan = c()
+for(i in seq(1, 200)){
+	if(sex[i] == 1){
+		ghad_mardan = c(ghad_mardan, height[i])
+	}
+	else{
+		ghad_zanan = c(ghad_zanan, height[i])
+	}	
+}
 
-
-
-
-ghad_mardan = c(sex == 1)
 print(ghad_mardan)
-x = c(1, 2, 3)
-x = c(x, 4)
-print(x)
+print(ghad_zanan)
+
+# az azmoon e 17 estefade mikonim :
+n1 = length(ghad_mardan)
+n2 = length(ghad_zanan)
+
+# nahie bohrani :
+c3 = qf(0.99, n1, n2)
+print(c3)
+
+test_3 = var.test(ghad_mardan, ghad_zanan, ratio = 1, alternative = "two.sided" ,conf.level = 0.99)
+print(test_3)
+
+print(1.302 < c3)
+
+
+# inja test e miangin anjam midim :
+test_4 = t.test(ghad_mardan, ghad_zanan, mu = 0, alternative = "two.sided", paired = FALSE,var.equal = FALSE,conf.level = 0.99)
+print(test_4)
+
+#value mishe 0.219
+# meghdar e C :
+c4 = pnorm(0.99)
+print(c4)
+print(c4 < 0.219)
+
+
+
 
 
 
