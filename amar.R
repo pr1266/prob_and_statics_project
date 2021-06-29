@@ -7,7 +7,7 @@ library("summarytools")
 height = rnorm(200, mean = 170, sd = 9.4)
 sex = rbern(200, prob = 0.7)
 error = runif(200, min = 85, max = 100)
-weight = sapply(height, '-', error)
+weight = height - error
 
 # amar tosifi :
 k = floor(1 + log(200, 2))
@@ -62,11 +62,25 @@ print(test_1)
 
 # hala nahie bohrani ro hesab mikonim :
 
-c = norm(0.9)
+c = pnorm(0.9)
 print(c) 
 
-print(abs(-0.47) > q_t)
+print(-0.47 > -c)
 # natije false pass farz H rad mishe
+
+
+# azmoon e dovom :
+# H0 : variance < 90 
+# H1 : variance > 90
+# variance jamiat maloome pas az azmoon e 7 estefade mikonim :
+# alpha = 0.05 va 1 - a = 0.95 va 1 - (a/2) = 0.975
+
+test_2 = varTest(weight, sigma.squared = 90, alternative = "greater", conf.level = 0.95)
+print(test_2)
+
+
+
+
 
 test_2 = varTest(height, sigma.squared = 90, conf.level = 0.95)
 print(test_2)
