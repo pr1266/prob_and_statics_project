@@ -46,8 +46,27 @@ var_weight = var(weight)
 mean_weight = mean(weight)
 
 # azmoon haye amari :
-test_1 = t.test(height, alternative = "less", mu = 170, conf_level = 0.1)
+# amoon e aval :
+# H0 : miu > 170
+# H1 : miu < 170
+# ebteda test ro anjam midim ta amare azmoon be dast biad
+# baad nahie bohrani ro mohasebe mikonim
+# baad check mikonim ke amare azmoon dar nahie bohrani gharar migire ya na
+# az tarafi variance jamiat 90 e
+# pas variance majhool nist
+# bana bar in az azmoon e shomare 2 estefade mikonim :
+
+test_1 = t.test(height, alternative = "less", mu = 170, conf_level = 0.9)
+# az test meghdar t be dast miad
 print(test_1)
 
-test_2 = varTest(height, sigma.squared = 90, conf.level = 0.05)
+# hala nahie bohrani ro hesab mikonim :
+
+c = norm(0.9)
+print(c) 
+
+print(abs(-0.47) > q_t)
+# natije false pass farz H rad mishe
+
+test_2 = varTest(height, sigma.squared = 90, conf.level = 0.95)
 print(test_2)
