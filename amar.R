@@ -8,12 +8,27 @@ height = rnorm(200, mean = 170, sd = 9.4)
 sex = rbern(200, prob = 0.7)
 error = runif(200, min = 85, max = 100)
 weight = height - error
-
+print(weight)
 # amar tosifi :
 k = floor(1 + log(200, 2))
 print(k)
-weight_freq = freq(weight, breaks = 8)
-print(weight_freq)
+
+min_weight= min(weight)
+max_weight= max(weight)
+
+range = floor((max_weight - min_weight) / k)
+print(range)
+
+breaks_ = c()
+
+for(i in seq(1, 8)){
+	breaks_ = c(breaks_, min_weight + i * range);
+}
+
+print(breaks_);
+
+weight_freq = Freq(weight, breaks = seq(min_weight, max_weight, by = range))
+weight_freq_freq = weight_freq$freq
 
 male = sum(sex == 1)
 female = sum(sex == 0)
@@ -128,20 +143,7 @@ c4 = pnorm(0.99)
 print(c4)
 print(c4 < 0.219)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# test barazandegi :
+# ghesmat e alef ro dar ghesmat e simulation anjam dadim
+# faravani har baze dar vector e weight_freq_freq rikhte shode
 
