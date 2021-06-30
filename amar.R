@@ -147,3 +147,4 @@ print(c4 < 0.219)
 # ghesmat e alef ro dar ghesmat e simulation anjam dadim
 # faravani har baze dar vector e weight_freq_freq rikhte shode
 
+
