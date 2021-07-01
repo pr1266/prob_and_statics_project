@@ -147,4 +147,51 @@ print(c4 < 0.219)
 # ghesmat e alef ro dar ghesmat e simulation anjam dadim
 # faravani har baze dar vector e weight_freq_freq rikhte shode
 
+# parametr haye amari :
+max_weight = max(weight)
+min_weight = min(weight)
+median_weight = median(weight)
+var_weight = var(weight)
+mean_weight = mean(weight)
 
+# maghadir az jadval :
+o = weight_freq_freq
+
+# meghdar e ehtemalat :
+print(breaks_)
+ranges = c(min(weight), breaks_)
+print(ranges)
+
+e = c()
+
+for(i in seq(1,length(ranges)-1)){
+	temp1 = (ranges[i] - mean_weight) / sqrt(var_weight)
+	temp2 = (ranges[i+1] - mean_weight) / sqrt(var_weight)
+	z1 = pnorm(temp1)
+	z2 = pnorm(temp2)
+	p_final = (z2 - z1) * 200
+	e = c(e, p_final)
+}
+
+print(e)
+print(length(e))
+
+t_fin = chisq.test(e, o)
+print(t_fin)
+
+manual_test = c()
+
+for(i in seq(1:length(e))){
+
+	temp = ((o[i] - e[i]) * (o[i] - e[i])) / e[i]
+	print(temp)
+	manual_test = c(manual_test, temp)
+}
+
+print(manual_test)
+
+
+t = qchisq(0.99, 8)
+print(t)
+
+print(56>t)
